@@ -17,7 +17,9 @@ void loop()
   if(digitalRead(motor) != 0) // если состояния мотора не равно 0, то 
   {
     motorstate = "ON"; // строковой переменной присваивается значение "ON"
-  }else{
+  }
+  else
+  {
     motorstate = "OFF"; // в противном случае - "OFF"
   }
   String str = "State: " + motorstate + "Transparency: " + transparency + "%"; // выводимая строка равна “State: S, Transparency: T” , где:- S – Состояние перемешивающего устройства (ON/OFF) - T – Текущая прозрачность вещества в % (
@@ -26,7 +28,9 @@ void loop()
   {
     digitalWrite(motor, HIGH); // включение мотора
     Serial.println(str); // вывод строки состояния str
-  }else{
+  }
+  else
+  {
     digitalWrite(led, LOW); // в противном случае выключаем светодиод
     Serial.println(str); // выводим строку состояния str
   }
